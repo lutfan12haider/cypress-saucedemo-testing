@@ -1,0 +1,73 @@
+# Automated Functional Testing of SauceDemo using Cypress
+
+End-to-end test automation project for the Software Testing course.
+The tests run on [SauceDemo](https://www.saucedemo.com), a public demo e-commerce site.
+
+## Tool
+
+- **Cypress** (JavaScript end-to-end testing framework)
+- Browser: Electron
+- Editor: VS Code
+
+## Project structure
+
+```
+.
+├── cypress
+│   └── e2e
+│       └── saucedemo.cy.js   # 8 test cases
+├── cypress.config.js         # Cypress settings
+├── package.json
+└── README.md
+```
+
+## Test cases
+
+| ID | Test case | Expected result |
+|----|-----------|-----------------|
+| TC01 | Valid login | Inventory page opens |
+| TC02 | Invalid password | Error message shown |
+| TC03 | Locked-out user | Locked message shown |
+| TC04 | Sort products by price | Low to high order |
+| TC05 | Add item to cart | Cart badge shows 1 |
+| TC06 | Remove item from cart | Cart is empty |
+| TC07 | Checkout with empty form | Validation error |
+| TC08 | Complete checkout | Order confirmation |
+
+## Setup
+
+1. Install [Node.js](https://nodejs.org) (LTS version).
+2. Clone this repository:
+   ```
+   git clone https://github.com/lutfan12haider/cypress-saucedemo-testing.git
+   cd cypress-saucedemo-testing
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+## Run the tests
+
+Visual runner:
+
+```
+npx cypress open --browser electron
+```
+
+Choose **E2E Testing**, then click `saucedemo.cy.js`.
+
+Headless run (saves video and screenshots):
+
+```
+npx cypress run --browser electron
+```
+
+## Results
+
+| Total | Passed | Failed | Skipped | Run time |
+|-------|--------|--------|---------|----------|
+| 8       | 8      | 0       | 0    | 9 seconds |
+
+
+
